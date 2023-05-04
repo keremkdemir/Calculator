@@ -1,0 +1,122 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+ *::after{
+    /*::before & ::after, bir web sayfasının DOM’unda yer almayan, yani HTML kodları içerisinde fiziksel olarak bulunmayan fakat, CSS aracılığıyla sayfanın ön yüzünde görülen sözde (sahte) HTML elemanlarıdır.
+
+    En basit şekliyle girdisi ve çıktısı aşağıdaki gibidir;
+    
+    HTML:
+    <div>Batu </div>
+
+    CSS:
+    div::before {
+        content:"Hoş geldin ";
+    }
+    div::after {
+        content:"bebek.";
+    }
+    GÖRÜNÜM:
+    Hoş geldin Batu bebek. */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;/*https://www.youtube.com/watch?v=NnZ3qr6yXzU&t=3315s&ab_channel=Sad%C4%B1kTuran/ */
+    align-items: center; /*Flex olan itemleri boxın ortasına hizalar*/
+    background: #fffbd5;
+    background: -webkit-linear-gradient(to right, #b20a2c, #fffbd5); /*https://www.ferhatyigit.com/webkit-moz-nedir/*/
+    background: linear-gradient(to right, #b20a2c, #fffbd5); /*Renk Geçişli Bir Arka Plan Sağlar*/ 
+    font-family: 'Dosis', sans-serif;
+    font-display: swap; /*font-display: swap özelliği ile, yazı stiliniz yüklenene kadar yedek yazı stili ile yazıyı hızlıca ekranda gösterir. Yazı stili yüklendiğinde ise bunu değiştirir. Buna FOUT (Flash of Unstyled Text) denir.*/
+    height: inherit; /*kalıtsallık konusu hakkında : https://fatihhayrioglu.com/cssde-kalitsallikinheritance/ */
+    justify-content: center;
+}
+
+.wrapper{
+    backdrop-filter: blur(5.5px); /*Adından da anlaşılacağı üzere arka plana blur ekler*/
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    flex-basis: 400px; /*flex-basis değeri bir öğenin ana başlangıç boyutunu belirler.*/
+    height: 540px;
+    padding: 20px 35px;
+}
+
+.screen{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto; /*"overflow" özelliği, bir alana sığmayacak kadar büyük içeriğe ne olacağını kontrol eder.  https://kodlamavakti.com/css/overflow/ */
+    padding: 20px;
+    text-align: right;
+    width: 326px;
+}
+
+.calc-button-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+.calc-button{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    flex-basis: 20%; /*flex-basis değeri bir öğenin ana başlangıç boyutunu belirler.*/
+    font-size: 24px;
+    height: 65px;
+}
+
+.calc-button:last-child{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: white;
+    background-color: #d72880;
+}
+
+.calc-button:last-child:hover{
+    background-color: inherit;
+    color: inherit;
+}
+
+.calc-button:hover{
+    background-color: inherit;
+}
+
+.calc-button:active{
+    background-color: #fef6d2;
+}
+
+.double{
+    flex-basis: 47%;
+}
+
+.triple{
+    flex-basis: 74%;
+}
+
