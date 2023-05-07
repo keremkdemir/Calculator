@@ -15,6 +15,8 @@ function buttonClick(value){
 }
 
 function handleSymbol(symbol){
+
+
     switch(symbol){
         case 'C':
             buffer = '0';
@@ -34,7 +36,7 @@ function handleSymbol(symbol){
                 buffer = '0';
             }
             else{
-                buffer = buffer.toString(0, buffer.length -1);
+                buffer = buffer.substring(0, buffer.length -1);
             }
             break;
         case '+':
@@ -42,6 +44,7 @@ function handleSymbol(symbol){
         case '×':
         case '÷':
             handleMath(symbol);
+            break;
             break;
     }
 }
@@ -57,6 +60,40 @@ function handleMath(symbol){
         runningTotal = intBuffer;
     }
     else{
-        flushOperation(intBuffer)
+        flushOperation(intBuffer);
+    }
+    previousOperator = symbol;
+    buffer = 0;
+}
+
+function flushOperation(intBuffer){
+    if(previousOperator === '+'){
+        runningTotal += intBuffer;
+    }
+    else if(previousOperator === '−'){
+        runningTotal -= intBuffer;
+    }
+    else if(previousOperator === '×'){
+        runningTotal *= intBuffer
+    }
+    else if(previousOperator === '÷'){
+        runningTotal /= intBuffer;
     }
 }
+
+function handleNumber(numberString){
+    if(buffer === "0"){
+        buffer = numberString;
+    }
+    else{
+        buffer += numberString;
+    }
+}
+
+function init(){
+    document.querySelector('.calc-buttons').addEventListener('click', function(event){
+        buttonClick(event.target.innerText);
+    })
+}
+
+init();

@@ -5,7 +5,7 @@ html{
 
 *,
 *::before,
- *::after{
+*::after{
     /*::before & ::after, bir web sayfasının DOM’unda yer almayan, yani HTML kodları içerisinde fiziksel olarak bulunmayan fakat, CSS aracılığıyla sayfanın ön yüzünde görülen sözde (sahte) HTML elemanlarıdır.
 
     En basit şekliyle girdisi ve çıktısı aşağıdaki gibidir;
@@ -30,9 +30,7 @@ html{
 body{
     display: flex;/*https://www.youtube.com/watch?v=NnZ3qr6yXzU&t=3315s&ab_channel=Sad%C4%B1kTuran/ */
     align-items: center; /*Flex olan itemleri boxın ortasına hizalar*/
-    background: #fffbd5;
-    background: -webkit-linear-gradient(to right, #b20a2c, #fffbd5); /*https://www.ferhatyigit.com/webkit-moz-nedir/*/
-    background: linear-gradient(to right, #b20a2c, #fffbd5); /*Renk Geçişli Bir Arka Plan Sağlar*/ 
+    background-color: gray;
     font-family: 'Dosis', sans-serif;
     font-display: swap; /*font-display: swap özelliği ile, yazı stiliniz yüklenene kadar yedek yazı stili ile yazıyı hızlıca ekranda gösterir. Yazı stili yüklendiğinde ise bunu değiştirir. Buna FOUT (Flash of Unstyled Text) denir.*/
     height: inherit; /*kalıtsallık konusu hakkında : https://fatihhayrioglu.com/cssde-kalitsallikinheritance/ */
@@ -43,7 +41,7 @@ body{
     backdrop-filter: blur(5.5px); /*Adından da anlaşılacağı üzere arka plana blur ekler*/
     -webkit-backdrop-filter: blur(5.5px);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     color: #232323;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -55,18 +53,20 @@ body{
 }
 
 .screen{
+    
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.01);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     color: #232323;
     font-size: 35px;
     overflow: auto; /*"overflow" özelliği, bir alana sığmayacak kadar büyük içeriğe ne olacağını kontrol eder.  https://kodlamavakti.com/css/overflow/ */
     padding: 20px;
     text-align: right;
     width: 326px;
+    overflow:auto;
 }
 
 .calc-button-row{
@@ -81,7 +81,7 @@ body{
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.01);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     color: #232323;
     flex-basis: 20%; /*flex-basis değeri bir öğenin ana başlangıç boyutunu belirler.*/
     font-size: 24px;
@@ -94,9 +94,9 @@ body{
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.01);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    color: white;
-    background-color: #d72880;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    color: black;
+    background-color: lime ;
 }
 
 .calc-button:last-child:hover{
@@ -109,7 +109,7 @@ body{
 }
 
 .calc-button:active{
-    background-color: #fef6d2;
+    background-color: #FCFFB2;
 }
 
 .double{
@@ -119,4 +119,3 @@ body{
 .triple{
     flex-basis: 74%;
 }
-
